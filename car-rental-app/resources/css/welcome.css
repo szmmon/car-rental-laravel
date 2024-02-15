@@ -37,7 +37,7 @@
 .container#picker {
     width: 60vh;
 }
-.row {
+.row:not(#img-row) {
     border: 1px solid black;
     padding: 3px;
     margin-bottom: 1px;
