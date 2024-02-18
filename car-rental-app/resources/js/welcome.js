@@ -14,3 +14,8 @@ $(document).ready(function () {
         $("#content").html("<p>Sample Ajax content loaded here...</p>");
     }, 1500); // Delay for demonstration purpose
 });
+$(document).ready(function () {
+    $("#datetimepicker").datetimepicker({
+        format: "YYYY-MM-DD HH:mm:ss", // Format daty i godziny
+    });
+});

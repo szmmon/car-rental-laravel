@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('book_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('location');
+            $table->date('pick-up-date');
+            $table->dateTime('return-date');
+
             $table->timestamps();
         });
     }

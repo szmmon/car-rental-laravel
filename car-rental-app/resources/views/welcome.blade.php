@@ -35,13 +35,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                        <td colspan="2">
                         <div class="row">
                                 <label for="pick-up-date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
                                     Pick up date</div></label>
-
                                 <div class="col-sm-12">
-                                    <input id="pick-up-date" type="text" class="form-control @error('pick-up-date') is-invalid @enderror" name="pick-up-date" value=""  autocomplete="pick-up-date" autofocus>
+                                    <input id="pick-up-date" type="datetime-local" class="form-control @error('pick-up-date') is-invalid @enderror" name="pick-up-date" value=""  autocomplete="pick-up-date" autofocus>
                                     @error('pick-up-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -50,51 +49,20 @@
                                 </div>
                             </div>     
                         </td>
-                        <td>
-                        <div class="row ">
-                                <label for="pick-up-time" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
-                                    Pick up time</div></label>
-
-                                <div class="col-sm-12">
-                                    <input id="pick-up-time" type="text" class="form-control @error('pick-up-time') is-invalid @enderror" name="pick-up-time" value=""  autocomplete="pick-up-time" autofocus>
-                                    @error('pick-up-time')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>     
-                        </td>
                     </tr>            
-                        <td>
-                        <div class="row">
+                        <td colspan="2">
+                         <div class="row">
                                 <label for="return-date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
                                     Return date</div></label>
-
                                 <div class="col-sm-12">
-                                    <input id="return-date" type="text" class="form-control @error('return-date') is-invalid @enderror" name="return-date" value=""  autocomplete="return-date" autofocus>
+                                    <input id="return-date" type="datetime-local" class="form-control @error('return-date') is-invalid @enderror" name="return-date" value=""  autocomplete="return-date" autofocus>
                                     @error('return-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>     
-                        </td>
-                        <td>
-                        <div class="row mb-3">
-                                <label for="return-time" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
-                                    Return time</div></label>
-
-                                <div class="col-sm-12">
-                                    <input id="return-time" type="text" class="form-control @error('return-time') is-invalid @enderror" name="return-time" value=""  autocomplete="return-time" autofocus>
-                                    @error('return-time')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>     
+                            </div> 
                         </td>
                     </tr>
                     <tr>
@@ -123,6 +91,15 @@
   </div>
 </section>
 
-
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    config = {
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+    }
+    flatpickr("input[type=datetime-local]", config);
+</script>
+@endpush
 
 @endsection
