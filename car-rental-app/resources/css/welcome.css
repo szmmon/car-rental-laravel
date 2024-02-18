@@ -34,14 +34,28 @@
     height: 100vh;
     object-fit: cover;
 }
-.container#picker {
-    width: 60vh;
-}
-.row:not(#img-row) {
-    border: 1px solid black;
-    padding: 3px;
-    margin-bottom: 1px;
-}
+
 .col-6.right {
     border-right: 1px solid black;
+}
+
+.table-overlay {
+    position: relative;
+}
+.table-overlay table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 500px) {
+    #picker-mobile {
+    }
+}
+.picker {
+    width: 60%;
+    height: 50%;
+}
+.search-btn {
+    width: 70vh;
 }
