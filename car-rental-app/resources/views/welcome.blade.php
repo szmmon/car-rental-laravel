@@ -10,7 +10,7 @@
     <div class="col-lg-12 p-0 mt-0 table-overlay">
       <img class="image" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/19ac7271194397.5bbd04e32021f.jpg" alt="Full Width Image">
         <table class="table picker" id="picker-mobile">
-            <form action="{{ route('bookRequest.store')     }}" method="POST">
+            <form action="{{ route('bookRequest.store') }}" method="POST">
                 
                 <thead>
                     <tr>

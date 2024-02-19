@@ -29,5 +29,6 @@ Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookR
 
 // Route::middleware(['auth'])->group(function(){
     Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
-    Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+    Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+    Route::post('/cars/create', [CarController::class, 'store'])->name('cars.store');
 // });
