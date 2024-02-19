@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCarRequest;
 use App\Models\Car;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        return view('cars.index');
     }
 
     /**
@@ -26,9 +27,12 @@ class CarController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCarRequest $request)
     {
-        //
+        $carRequest = new Car($request->validated());
+        $carRequest->save();
+        return redirect(route('cars.index'));
+      
     }
 
     /**

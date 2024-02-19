@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookRequestController;
+use App\Http\Controllers\CarController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,8 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/bookRequest', [BookRequestController::class, 'store'])->name('bookRequest.store');
 Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookRequest.index');
+
+// Route::middleware(['auth'])->group(function(){
+    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+// });

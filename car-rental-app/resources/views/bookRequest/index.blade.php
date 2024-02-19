@@ -56,17 +56,4 @@
   </div>
 </div>
 
-<!-- Page Content -->
-
-@push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-    config = {
-        enableTime: true,
-        dateFormat: 'Y-m-d H:i',
-    }
-    flatpickr("input[type=datetime-local]", config);
-</script>
-@endpush
-
 @endsection
