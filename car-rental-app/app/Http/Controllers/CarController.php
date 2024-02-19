@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBookRequest;
-use App\Models\BookRequest;
-use Illuminate\Contracts\View\View;
+use App\Models\Car;
 use Illuminate\Http\Request;
 
-class BookRequestController extends Controller
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('bookRequest.index');
+        //
     }
 
     /**
@@ -28,18 +26,15 @@ class BookRequestController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookRequest $request)
+    public function store(Request $request)
     {
-        $bookRequest = new BookRequest($request->validated());
-        $bookRequest->save();
-        return redirect(route('bookRequest.index'));
-        
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(BookRequest $bookRequest)
+    public function show(Car $car)
     {
         //
     }
@@ -47,7 +42,7 @@ class BookRequestController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BookRequest $bookRequest)
+    public function edit(Car $car)
     {
         //
     }
@@ -55,7 +50,7 @@ class BookRequestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, BookRequest $bookRequest)
+    public function update(Request $request, Car $car)
     {
         //
     }
@@ -63,7 +58,7 @@ class BookRequestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BookRequest $bookRequest)
+    public function destroy(Car $car)
     {
         //
     }

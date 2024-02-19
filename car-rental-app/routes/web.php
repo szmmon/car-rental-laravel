@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BookRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/bookRequest', [BookRequestController::class, 'store'])->name('bookRequest.store');
+Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookRequest.index');

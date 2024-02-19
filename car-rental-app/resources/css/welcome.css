@@ -48,6 +48,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.car-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 40%;
+}
 @media screen and (max-width: 500px) {
     #picker-mobile {
     }
