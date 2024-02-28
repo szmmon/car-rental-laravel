@@ -10,10 +10,10 @@ class Car extends Model
     use HasFactory;
 
     protected $fillable =[
+        'image_path',
         'name',
         'year',
-        'fuel',
-        'desctiption',
+        'description',
         'daily-price'
     ];
 }

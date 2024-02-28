@@ -30,7 +30,6 @@ class CarController extends Controller
     public function store(StoreCarRequest $request)
     {
         $car = new Car($request->validated());
-        
         $car->save();
         return redirect(route('cars.index'));
     }

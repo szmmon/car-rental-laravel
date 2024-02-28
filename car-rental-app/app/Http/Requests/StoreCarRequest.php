@@ -25,7 +25,6 @@ class StoreCarRequest  extends FormRequest
             
             'name' => 'required|max:500',
             'year' => 'required|integer',
-            'fuel' => 'required|max:20',
             'description' => 'nullable|max:1500',
             'image' => 'nullable|image|mimes:jpg,png',
             'daily-price' => 'required|numeric|min:0'
