@@ -30,5 +30,6 @@ Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookR
 // Route::middleware(['auth'])->group(function(){
     Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
     Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+    Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
     Route::post('/cars/create', [CarController::class, 'store'])->name('cars.store');
 // });

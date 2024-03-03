@@ -25,8 +25,9 @@
                 <td>{{$car->description}}</td>
                 <td>{{$car->year}}</td>
                 <td>{{$car->daily_price}}</td>
-                </tr>
+                <td><a href="{{route('cars.show', $car->id)}}"><button class="btn btn-success sm">show</button></a></td>
                 @endforeach
+                </tr>
             </tbody>
     
         </table>
