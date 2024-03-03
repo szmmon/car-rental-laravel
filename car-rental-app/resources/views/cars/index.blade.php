@@ -17,6 +17,17 @@
                 <!-- <th scope="col">Actions</th> -->
                 </tr>
             </thead>
+            @foreach($cars as $car)
+            <tbody>
+                <tr>
+                <th scope="row">{{$car->id}}</th>
+                <td>{{$car->name}}</td>
+                <td>{{$car->description}}</td>
+                <td>{{$car->year}}</td>
+                <td>{{$car->daily_price}}</td>
+                </tr>
+                @endforeach
+            </tbody>
     
         </table>
     </div>

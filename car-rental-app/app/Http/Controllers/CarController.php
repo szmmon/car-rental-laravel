@@ -13,7 +13,10 @@ class CarController extends Controller
      */
     public function index()
     {
-        return view('cars.index');
+        return view('cars.index', [
+            'cars' => Car::paginate(10)
+        ]
+        );
     }
 
     /**
@@ -30,6 +33,9 @@ class CarController extends Controller
     public function store(StoreCarRequest $request)
     {
         $car = new Car($request->validated());
+        if ($request->hasFile(key:'image')){
+            $car->image_path = $request->file(key:'image')->store(path:'cars');
+                }        
         $car->save();
         return redirect(route('cars.index'));
     }
