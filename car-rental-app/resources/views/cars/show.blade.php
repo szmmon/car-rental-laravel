@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                             <div class="row mb-3">
                             @if(!is_null($car->image_path))
-                                <img src="{{asset('storage/' . $car->image_path)}}" alt="No product image" lass="img-thumbnail mx-auto d-block">
+                                <img src="{{asset('storage/' . $car->image_path)}}" alt="No product image" class="img-thumbnail mx-auto d-block">
                             @endif
 
                             </div>

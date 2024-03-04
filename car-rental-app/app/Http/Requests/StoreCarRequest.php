@@ -22,12 +22,11 @@ class StoreCarRequest  extends FormRequest
     public function rules(): array
     {
         return [
-            
             'name' => 'required|max:500',
-            'year' => 'required|integer',
             'description' => 'nullable|max:1500',
-            'image' => 'nullable|image|mimes:jpg,png',
-            'daily-price' => 'required|numeric|min:0'
+            'year' => 'required|integer',
+            'daily_price' => 'required|numeric|min:0',
+            'image' => 'nullable|image|mimes:jpg,png'
         ];
     }
 }

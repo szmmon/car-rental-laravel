@@ -80,7 +80,7 @@
                             <label for="image" class="col-md-4 col-form-label text-md-end">Image</label>
 
                             <div class="col-md-6">
-                                <input id="image" type="file" step="0.01" min="0" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image">
+                                <input id="image" type="file" step="0.01" min="0" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}"  autocomplete="image">
 
                                 @error('image')
                                     <span class="invalid-feedback" role="alert">
@@ -94,7 +94,7 @@
                             
                         <div class="row m-3">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" value="">
+                                <button type="submit" class="btn btn-primary" value="submit">
                                     Add vehicle
                                 </button>
                             </div>

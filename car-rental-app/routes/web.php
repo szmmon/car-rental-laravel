@@ -27,9 +27,15 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/bookRequest', [BookRequestController::class, 'store'])->name('bookRequest.store');
 Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookRequest.index');
 
-// Route::middleware(['auth'])->group(function(){
+
     Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    
     Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
-    Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
     Route::post('/cars/create', [CarController::class, 'store'])->name('cars.store');
-// });
+
+    Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
+    
+    Route::get('/cars/edit/{car}', [CarController::class, 'edit'])->name('cars.edit');
+    Route::post('/cars/{car}', [CarController::class, 'update'])->name('cars.update');
+    Route::delete('/cars/{car}', [CarController::class, 'destroy'])->name('cars.destroy');
+

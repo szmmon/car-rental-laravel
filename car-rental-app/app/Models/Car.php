@@ -14,6 +14,6 @@ class Car extends Model
         'name',
         'year',
         'description',
-        'daily-price'
+        'daily_price'
     ];
 }

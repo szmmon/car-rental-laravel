@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarRequest;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -37,7 +38,7 @@ class CarController extends Controller
             $car->image_path = $request->file(key:'image')->store(path:'cars');
                 }        
         $car->save();
-        return redirect(route('cars.index'));
+        return redirect()->action([CarController::class, 'index']);
     }
 
     /**
@@ -56,15 +57,28 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+            return view('cars.edit', [
+            'car' => $car,
+        ]
+        );    
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Car $car)
+    public function update(StoreCarRequest $request, Car $car)
     {
-        //
+        // $oldImagePath = $car->image_path;
+        // $car->fill($request->validated());
+        // if ($request->hasFile(key:'image')){
+        //         if (Storage::exists($oldImagePath)){
+        //             Storage::delete($oldImagePath);
+        //         }
+        //         $car->image_path = $request->file(key:'image')->store(path:'cars');
+        // }
+        // $car->save();
+        return redirect(route('cars.index'));
+        // return view('cars.index');
     }
 
     /**
