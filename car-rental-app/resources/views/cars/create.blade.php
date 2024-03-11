@@ -62,12 +62,12 @@
                         
 
                         <div class="row mb-3">
-                            <label for="daily-price" class="col-md-4 col-form-label text-md-end">Daily price</label>
+                            <label for="daily_price" class="col-md-4 col-form-label text-md-end">Daily price</label>
 
                             <div class="col-md-6">
-                                <input id="daily-price" type="number" step="0.01" min="0" class="form-control @error('daily-price') is-invalid @enderror" name="daily-price" value="{{ old('daily-price') }}" required autocomplete="daily-price">
+                                <input id="daily_price" type="number" step="0.01" min="0" class="form-control @error('daily_price') is-invalid @enderror" name="daily_price" value="{{ old('daily_price') }}" required autocomplete="daily_price">
 
-                                @error('daily-price')
+                                @error('daily_price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

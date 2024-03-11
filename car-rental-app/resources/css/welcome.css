@@ -58,12 +58,12 @@
 }
 .container#cars-table {
     position: absolute;
-    top: 25%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .card {
-    margin-top: 20%;
+    margin-top: 10%;
 }
 @media screen and (max-width: 500px) {
     #picker-mobile {

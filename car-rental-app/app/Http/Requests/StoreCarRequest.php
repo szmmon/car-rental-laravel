@@ -27,7 +27,7 @@ class StoreCarRequest  extends FormRequest
             'year' => 'required|integer',
             'description' => 'nullable|max:1500',
             'image' => 'nullable|image|mimes:jpg,png',
-            'daily-price' => 'required|numeric|min:0'
+            'daily_price' => 'required|numeric|min:0'
         ];
     }
 }
