@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCarRequest;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
 
 
 class CarController extends Controller
@@ -89,6 +90,19 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        try {
+        $car->delete();
+        Session::flash('status', 'Product deleted');
+        return response()->json(
+            ['status'=> 'success']
+        );
+            
+        } catch (\Exception $e) {
+        return response()->json(
+            ['status'=> 'error',
+            'message'=>'Serverside error occured']
+        )->setStatusCode(500);
+            
+        }
     }
 }
