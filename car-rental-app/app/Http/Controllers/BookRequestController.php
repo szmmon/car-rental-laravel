@@ -6,6 +6,8 @@ use App\Http\Requests\StoreBookRequest;
 use App\Models\BookRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use App\Models\Car;
+
 
 class BookRequestController extends Controller
 {
@@ -14,7 +16,7 @@ class BookRequestController extends Controller
      */
     public function index()
     {
-        return view('bookRequest.index');
+        return view('bookRequest.index', ['cars' => Car::paginate(2)]);
     }
 
     /**

@@ -12,40 +12,28 @@
 
         <div class="container car-container">
             <div class="row">
-                <div class="col-md-6 mb-4">
+                @foreach($cars as $car)
+                <div class="col-md-6 mb-2">
                     <div class="card">
-                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Samochód 1">
+                    @if(!is_null($car->image_path))
+
+                        <img src="{{asset('storage/' . $car->image_path)}}" class="card-img-top" alt="{{$car->name}}">
+
+                    @endif
                         <div class="card-body">
-                        <h5 class="card-title">Samochód 1</h5>
-                        <p class="card-text">Opis samochodu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h5 class="card-title">{{$car->name}}</h5>
+                        <p class="card-text">{{$car->description}}</p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Marka: Toyota</li>
-                            <li class="list-group-item">Model: Corolla</li>
-                            <li class="list-group-item">Rok produkcji: 2022</li>
-                            <li class="list-group-item">Kolor: Czarny</li>
-                            <li class="list-group-item">Cena za dzień: $50</li>
+                            <li class="list-group-item">Production year: {{$car->year}}</li>
+                            <li class="list-group-item">Price for a day: {{$car->daily_price}}</li>
+                            <li class="list-group-item">Total price: {{$car->daily_price}}</li>
                         </ul>
-                        <a href="#" class="btn btn-primary mt-3">Wynajmij teraz</a>
+                        <a href="#" class="btn btn-primary mt-3">Book now!</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Samochód 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Samochód 2</h5>
-                            <p class="card-text">Opis samochodu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Marka: BMW</li>
-                                <li class="list-group-item">Model: X5</li>
-                                <li class="list-group-item">Rok produkcji: 2023</li>
-                                <li class="list-group-item">Kolor: Biały</li>
-                                <li class="list-group-item">Cena za dzień: $80</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary mt-3">Wynajmij teraz</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+               {{$cars->links()}}
             </div>
         </div>
     <!-- Dodaj więcej kart tutaj -->
