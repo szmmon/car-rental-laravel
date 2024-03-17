@@ -38,7 +38,7 @@
                 <td>{{$car->daily_price}}</td>
                 <td><a href="{{route('cars.show', $car->id)}}"><button class="btn btn-success sm">show</button></a>
                 <a href="{{route('cars.edit', $car->id)}}"><button class="btn btn-info sm">edit</button></a>
-                <button class="btn btn-danger sm car-delete" data-id="{{$car->id}}">delete</button></td>
+                <button class="btn btn-danger sm record-delete" data-id="{{$car->id}}">delete</button></td>
                 @endforeach
                 </tr>
             </tbody>

@@ -1,5 +1,5 @@
 $(function () {
-    $(".car-delete").click(function () {
+    $(".record-delete").click(function () {
         // console.log($(this).data("id"));
         Swal.fire({
             title: "Are you sure?",
@@ -10,17 +10,32 @@ $(function () {
             cancelButtonText: "No, keep it",
         }).then((result) => {
             if (result.isConfirmed) {
-                $.ajax({
-                    method: "DELETE",
-                    url: "http://localhost:8000/cars/" + $(this).data("id"),
-                    // data: {$id = },
-                })
-                    .done(function (data) {
-                        window.location.reload();
+                if (window.location.href.includes("cars")) {
+                    $.ajax({
+                        method: "DELETE",
+                        url: "http://localhost:8000/cars/" + $(this).data("id"),
+                        // data: {$id = },
                     })
-                    .fail(function (data) {
-                        alert("error");
-                    });
+                        .done(function (data) {
+                            window.location.reload();
+                        })
+                        .fail(function (data) {
+                            alert("error");
+                        });
+                } else if (window.location.href.includes("users")) {
+                    $.ajax({
+                        method: "DELETE",
+                        url:
+                            "http://localhost:8000/users/" + $(this).data("id"),
+                        // data: {$id = },
+                    })
+                        .done(function (data) {
+                            window.location.reload();
+                        })
+                        .fail(function (data) {
+                            alert("error");
+                        });
+                }
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire("Cancelled", "Your record is safe :)", "error");
             }

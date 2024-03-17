@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookRequestController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -45,6 +46,12 @@ Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookR
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::middleware(['can:isAdmin'])->group(function(){
+        
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
+        Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
+        Route::post('/users/{user}', [UserController::class, 'update'])->name('users.update');
+
         Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
         Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
         Route::get('/cars/edit/{car}', [CarController::class, 'edit'])->name('cars.edit');
