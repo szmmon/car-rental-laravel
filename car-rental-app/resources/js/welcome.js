@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         var navbar = $(".navbar");
@@ -10,12 +10,15 @@ $(document).ready(function () {
     });
 
     // Simulate Ajax content loading
-    setTimeout(function () {
-        $("#content").html("<p>Sample Ajax content loaded here...</p>");
-    }, 1500); // Delay for demonstration purpose
+    setTimeout(function () {}, 1500); // Delay for demonstration purpose
 });
-$(document).ready(function () {
-    $("#datetimepicker").datetimepicker({
-        format: "YYYY-MM-DD HH:mm:ss", // Format daty i godziny
-    });
-});
+
+// $(document).ready(function () {
+//     $(".datetimepicker").datetimepicker({
+//         minDate: "today",
+//         altInput: true,
+//         altFormat: "F j, Y",
+//         // dateFormat: "YYYY-MM-DD HH:mm:ss",
+//         // Format daty i godziny
+//     });
+// });

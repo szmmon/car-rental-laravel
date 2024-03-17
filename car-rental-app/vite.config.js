@@ -10,6 +10,7 @@ export default defineConfig({
                 "resources/js/delete.js",
                 "resources/js/welcome.js",
                 "resources/css/welcome.css",
+                "resources/js/datepick.js",
             ],
             refresh: true,
         }),

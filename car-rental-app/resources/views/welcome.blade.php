@@ -40,7 +40,7 @@
                                 <label for="pick-up-date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
                                     Pick up date</div></label>
                                 <div class="col-sm-12">
-                                    <input id="pick-up-date" type="datetime-local" class="form-control @error('pick-up-date') is-invalid @enderror" name="pick-up-date" value=""  autocomplete="pick-up-date" autofocus>
+                                    <input id="pick-up-date" type="datetime-local" class="form-control @error('pick-up-date') is-invalid @enderror" name="pick-up-date" autofocus>
                                     @error('pick-up-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -55,7 +55,7 @@
                                 <label for="return-date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
                                     Return date</div></label>
                                 <div class="col-sm-12">
-                                    <input id="return-date" type="datetime-local" class="form-control @error('return-date') is-invalid @enderror" name="return-date" value=""  autocomplete="return-date" autofocus>
+                                    <input id="return-date" type="datetime-local" class="datetimepicker form-control @error('return-date') is-invalid @enderror" name="return-date" value=""  autocomplete="return-date" autofocus>
                                     @error('return-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

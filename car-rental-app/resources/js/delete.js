@@ -1,5 +1,3 @@
-import Swal from "sweetalert2";
-
 $(function () {
     $(".car-delete").click(function () {
         // console.log($(this).data("id"));

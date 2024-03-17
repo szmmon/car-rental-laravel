@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/delete.js', 'resources/js/welcome.js','resources/css/welcome.css',  ])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/delete.js', 'resources/js/welcome.js','resources/css/welcome.css', 'resources/js/datepick.js'  ])
 
 </head>
 <body>
@@ -66,7 +66,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    @can('isAdmin')
                                     <a class="dropdown-item" href="/cars">Cars menu</a>
+                                    @endcan
                                 </div>
                             </li>
                         @endguest

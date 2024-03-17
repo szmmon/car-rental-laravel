@@ -16,7 +16,7 @@
                 <div class="col-md-6 mb-2">
                     <div class="card">
                     @if(!is_null($car->image_path))
-
+                    
                         <img src="{{asset('storage/' . $car->image_path)}}" class="card-img-top" alt="{{$car->name}}">
 
                     @endif
