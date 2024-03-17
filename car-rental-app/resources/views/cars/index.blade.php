@@ -4,7 +4,18 @@
     <!-- zeby nie ladowalo css dla kazdej strony tylko dla tego danego endpointa -->
 
 @section('content')
+
 <div class="container" id="cars-table">
+    @include('helpers.flashmessages')
+    <div class="row">
+        <div class="col-10"><h2>Cars list</h2></div>
+        <div class="col-2 float-right">
+            <a href="{{route('cars.create')}}" class='float-right'>
+                <button class="btn btn-primary">+</button>
+            </a>
+
+        </div>
+    </div>  
     <div class="row">
         <table class="table table-hover">
             <thead>
@@ -33,15 +44,6 @@
             </tbody>
     
         </table>
-    </div>
-    <div class="row">
-        <div class="col-10"></div>
-        <div class="col-2 float-right">
-            <a href="{{route('cars.create')}}" class='float-right'>
-                <button class="btn btn-primary">+</button>
-            </a>
-
-        </div>
     </div>
     </div>
 

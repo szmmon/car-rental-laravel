@@ -40,7 +40,7 @@ class CarController extends Controller
             $car->image_path = $request->file(key:'image')->store(path:'cars');
                 }        
         $car->save();
-        return redirect(route('cars.index'));
+        return redirect(route('cars.index'))->with('status', 'Vehicle stored');
     }
 
     /**
@@ -82,7 +82,7 @@ class CarController extends Controller
             $car->image_path = $request->file(key:'image')->store(path:'cars');
                 }        
         $car->save();
-        return redirect(route('cars.index'));
+        return redirect(route('cars.index'))->with('status', 'Vehicle updated');
     }
 
     /**
@@ -92,7 +92,7 @@ class CarController extends Controller
     {
         try {
         $car->delete();
-        Session::flash('status', 'Product deleted');
+        Session::flash('status', 'Vehicle deleted');
         return response()->json(
             ['status'=> 'success']
         );
