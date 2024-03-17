@@ -62,6 +62,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.register-login {
+    margin-top: 10vh;
+}
 .card {
     margin-top: 0%;
 }
