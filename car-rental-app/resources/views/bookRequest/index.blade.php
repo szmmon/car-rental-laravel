@@ -26,7 +26,6 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Production year: {{$car->year}}</li>
                             <li class="list-group-item">Price for a day: {{$car->daily_price}}</li>
-                            <li class="list-group-item">Total price: {{$car->daily_price}}</li>
                         </ul>
                         <a href="#" class="btn btn-primary mt-3">Book now!</a>
                         </div>

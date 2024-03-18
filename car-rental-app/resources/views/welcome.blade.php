@@ -37,10 +37,10 @@
                     <tr>
                         <td colspan="2">
                         <div class="row">
-                                <label for="pick-up-date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
+                                <label for="pick_up_date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
                                     Pick up date</div></label>
                                 <div class="col-sm-12">
-                                    <input id="pick-up-date" type="datetime-local" class="form-control @error('pick-up-date') is-invalid @enderror" name="pick-up-date" autofocus>
+                                    <input id="pick_up_date" type="datetime-local" class="form-control @error('pick_up_date') is-invalid @enderror" name="pick_up_date" autofocus>
                                     @error('pick-up-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -52,11 +52,11 @@
                     </tr>            
                         <td colspan="2">
                          <div class="row">
-                                <label for="return-date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
+                                <label for="return_date" class="col-sm-12 col-form-label text-sm-end"><div class="d-flex justify-content-center">
                                     Return date</div></label>
                                 <div class="col-sm-12">
-                                    <input id="return-date" type="datetime-local" class="datetimepicker form-control @error('return-date') is-invalid @enderror" name="return-date" value=""  autocomplete="return-date" autofocus>
-                                    @error('return-date')
+                                    <input id="return_date" type="datetime-local" class="datetimepicker form-control @error('return_date') is-invalid @enderror" name="return_date" value=""  autocomplete="return_date" autofocus>
+                                    @error('return_date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

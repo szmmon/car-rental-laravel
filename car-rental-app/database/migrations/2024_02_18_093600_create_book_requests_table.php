@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('book_requests', function (Blueprint $table) {
             $table->id();
             $table->string('location');
-            $table->dateTime('pick-up-date');
-            $table->dateTime('return-date');
+            $table->dateTime('pick_up_date');
+            $table->dateTime('return_date');
 
             $table->timestamps();
         });

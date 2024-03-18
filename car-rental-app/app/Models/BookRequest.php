@@ -11,7 +11,7 @@ class BookRequest extends Model
 
         protected $fillable = [
         'location',
-        'pick-up-date',
-        'return-date',
+        'pick_up_date',
+        'return_date',
         ];
 }

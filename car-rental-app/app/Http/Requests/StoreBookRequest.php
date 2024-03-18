@@ -24,8 +24,8 @@ class StoreBookRequest  extends FormRequest
         return [
             
             'location' => 'required|max:500',
-            'pick-up-date' => 'required',
-            'return-date' => 'required'
+            'pick_up_date' => 'required',
+            'return_date' => 'required'
         ];
     }
 }

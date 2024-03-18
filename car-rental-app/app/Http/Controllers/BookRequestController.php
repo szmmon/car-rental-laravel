@@ -16,7 +16,8 @@ class BookRequestController extends Controller
      */
     public function index()
     {
-        return view('bookRequest.index', ['cars' => Car::paginate(2)]);
+        return view('bookRequest.index', [
+        'cars' => Car::paginate(2)]);
     }
 
     /**
