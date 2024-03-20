@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBookRequest;
-use App\Models\BookRequest;
+use App\ValueObjects\BookRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\ValueObjects\Cart;
+use Illuminate\Support\Facades\Session;
 
 
 class BookRequestController extends Controller
@@ -17,57 +19,18 @@ class BookRequestController extends Controller
     public function index()
     {
         return view('bookRequest.index', [
+        'request' => Session::get('request'),
         'cars' => Car::paginate(2)]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookRequest $request)
+    public function store(Request $request)
     {
-        $bookRequest = new BookRequest($request->validated());
-        $bookRequest->save();
-        return redirect(route('bookRequest.index'));
-        
+        $bookRequest = new BookRequest($request->location, $request->pick_up_date, $request->return_date);
+        Session::put('request', $bookRequest);
+        return redirect(route('bookRequest.index'));       
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(BookRequest $bookRequest)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(BookRequest $bookRequest)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, BookRequest $bookRequest)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(BookRequest $bookRequest)
-    {
-        //
-    }
 }

@@ -25,7 +25,11 @@
                         <p class="card-text">{{$car->description}}</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Production year: {{$car->year}}</li>
-                            <li class="list-group-item">Price for a day: {{$car->daily_price}}</li>
+                            <li class="list-group-item">Price for a day: {{$car->daily_price}} USD</li>
+                            <li class="list-group-item">Pick up location: {{$request->getLocation()}}</li>
+                            <li class="list-group-item">Dates selected: {{$request->datesDisplay()}}</li>
+                            <li class="list-group-item">Total price: {{
+                              $request->calculateTotalValue($car)}} USD</li>
                         </ul>
                         <a href="#" class="btn btn-primary mt-3">Book now!</a>
                         </div>
