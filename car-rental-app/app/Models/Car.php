@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends Model
 {
@@ -17,4 +17,8 @@ class Car extends Model
         'description',
         'daily_price'
     ];
+    public function booking_confirmeds(): HasMany
+    {
+        return $this->hasMany(BookingConfirmed::class);
+    }
 }

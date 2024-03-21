@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookRequestController;
+use App\Http\Controllers\BookingConfirmedController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
@@ -47,8 +48,12 @@ Route::get('/bookRequest', [BookRequestController::class, 'index'])->name('bookR
 
 Route::middleware(['auth', 'verified'])->group(function(){
 
-    Route::middleware(['can:isAdmin'])->group(function(){
+    Route::post('/bookingConfirmed', [BookingConfirmedController::class, 'store'])->name('bookingConfirmed.store');
+    Route::get('/bookingConfirmed', [BookingConfirmedController::class, 'index'])->name('bookingConfirmed.index');
         
+
+
+    Route::middleware(['can:isAdmin'])->group(function(){
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
         Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.delete');
         Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');

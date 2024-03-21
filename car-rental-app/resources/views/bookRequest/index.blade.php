@@ -9,7 +9,7 @@
     <!-- Obraz -->
     <div class="col-lg-12 p-0 mt-0 table-overlay">
       <img class="image" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/19ac7271194397.5bbd04e32021f.jpg" alt="Full Width Image">
-
+      <form action="{{ route('bookingConfirmed.store') }}" method="POST">
         <div class="container car-container">
             <div class="row">
                 @foreach($cars as $car)
@@ -24,14 +24,24 @@
                         <h5 class="card-title">{{$car->name}}</h5>
                         <p class="card-text">{{$car->description}}</p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Production year: {{$car->year}}</li>
+                            <li class="list-group-item" >Production year: {{$car->year}}</li>
                             <li class="list-group-item">Price for a day: {{$car->daily_price}} USD</li>
                             <li class="list-group-item">Pick up location: {{$request->getLocation()}}</li>
                             <li class="list-group-item">Dates selected: {{$request->datesDisplay()}}</li>
                             <li class="list-group-item">Total price: {{
                               $request->calculateTotalValue($car)}} USD</li>
+                            <input type="hidden" name="car_id" value="{{$car->id}}">
+                            <input type="hidden" name="total_price" value="{{$request->calculateTotalValue($car)}}">
+                            <input type="hidden" name="location" value="{{$request->getLocation()}}">
+                            <input type="hidden" name="pick_up_date" value="{{$request->getPick_up_date()}}">
+                            <input type="hidden" name="return_date" value="{{$request->getReturn_date()}}">
                         </ul>
-                        <a href="#" class="btn btn-primary mt-3">Book now!</a>
+                        
+                        @guest
+                        You need to <a href="{{ route('login') }}">{{ __('Login') }}</a> to continue</br>
+                        @endguest
+
+                        <button type="submit" class="btn btn-primary" @guest disabled @endguest> Book now!</button>
                         </div>
                     </div>
                 </div>
@@ -39,7 +49,7 @@
                {{$cars->links()}}
             </div>
         </div>
-    <!-- Dodaj więcej kart tutaj -->
+      </form>
   </div>
 </div>
     </div>

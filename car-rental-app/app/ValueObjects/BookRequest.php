@@ -29,7 +29,12 @@ class BookRequest{
     public function getLocation(){
         return ucfirst($this->location);
     }
-
+    public function getPick_up_date(){
+        return $this->pick_up_date;
+    }
+    public function getReturn_date(){
+        return $this->return_date;
+    }
 
 
     public function calculateDateRange(){
