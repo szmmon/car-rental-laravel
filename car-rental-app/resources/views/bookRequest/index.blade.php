@@ -31,6 +31,9 @@
                             <li class="list-group-item">Total price: {{
                               $request->calculateTotalValue($car)}} USD</li>
                             <input type="hidden" name="car_id" value="{{$car->id}}">
+                            <input type="hidden" name="car_name" value="{{$car->name}}">
+                            <input type="hidden" name="car_description" value="{{$car->description}}">
+                            <input type="hidden" name="car_year" value="{{$car->year}}">
                             <input type="hidden" name="total_price" value="{{$request->calculateTotalValue($car)}}">
                             <input type="hidden" name="location" value="{{$request->getLocation()}}">
                             <input type="hidden" name="pick_up_date" value="{{$request->getPick_up_date()}}">

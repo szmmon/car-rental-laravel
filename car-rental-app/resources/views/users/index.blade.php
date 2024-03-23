@@ -34,8 +34,8 @@
                 <td>No</td>
                 @endif
                 <td>
-                <a href="{{route('users.edit', $user->id)}}"><button class="btn btn-info sm">edit</button></a>
-                <button class="btn btn-danger sm record-delete" data-id="{{$user->id}}">delete</button></td>
+                <a href="{{route('users.edit', $user->id)}}"><button class="btn btn-info sm"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                <button class="btn btn-danger sm record-delete" data-id="{{$user->id}}"><i class="fa-regular fa-trash-can"></i></button></td>
                 @endforeach
 
                 </tr>

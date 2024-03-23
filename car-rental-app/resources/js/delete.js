@@ -35,6 +35,20 @@ $(function () {
                         .fail(function (data) {
                             alert("error");
                         });
+                } else if (window.location.href.includes("bookingConfirmed")) {
+                    $.ajax({
+                        method: "DELETE",
+                        url:
+                            "http://localhost:8000/bookingConfirmed/" +
+                            $(this).data("id"),
+                        // data: {$id = },
+                    })
+                        .done(function (data) {
+                            window.location.reload();
+                        })
+                        .fail(function (data) {
+                            alert("error");
+                        });
                 }
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire("Cancelled", "Your record is safe :)", "error");

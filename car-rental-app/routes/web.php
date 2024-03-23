@@ -50,7 +50,9 @@ Route::middleware(['auth', 'verified'])->group(function(){
 
     Route::post('/bookingConfirmed', [BookingConfirmedController::class, 'store'])->name('bookingConfirmed.store');
     Route::get('/bookingConfirmed', [BookingConfirmedController::class, 'index'])->name('bookingConfirmed.index');
-        
+    Route::get('/bookingConfirmed/edit/{booking}', [BookingConfirmedController::class, 'edit'])->name('bookingConfirmed.edit');
+    Route::post('/bookingConfirmed/{booking}', [BookingConfirmedController::class, 'update'])->name('bookingConfirmed.update');
+    Route::delete('/bookingConfirmed/{booking}', [BookingConfirmedController::class, 'destroy'])->name('bookingConfirmed.delete');
 
 
     Route::middleware(['can:isAdmin'])->group(function(){
