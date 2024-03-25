@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/delete.js', 'resources/js/welcome.js','resources/css/welcome.css', 'resources/js/datepick.js', 'resources/css/app.css'  ])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/delete.js', 'resources/js/welcome.js','resources/css/welcome.css', 'resources/js/datepick.js',  'resources/js/totalCalculate.js' , 'resources/css/app.css'  ])
 
 </head>
 <body>

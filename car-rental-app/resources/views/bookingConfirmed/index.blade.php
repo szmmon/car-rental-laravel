@@ -9,7 +9,8 @@
     <div class="col-lg-12 p-0 mt-0 table-overlay">
       <img class="image" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/19ac7271194397.5bbd04e32021f.jpg" alt="Full Width Image">
       <div class="container car-container" id="orders-table">
-            
+            @include('helpers.flashmessages')
+
             <div class="col-10"><h2>Hi, {{ Auth::user()->name }}, your bookings:</h2></div>
             
             <table class="table table-hover mt-5 table-transparent" >

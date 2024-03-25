@@ -12,6 +12,7 @@ export default defineConfig({
                 "resources/js/welcome.js",
                 "resources/css/welcome.css",
                 "resources/js/datepick.js",
+                "resources/js/totalCalculate.js",
             ],
             refresh: true,
         }),

@@ -7,6 +7,7 @@ use App\Models\Car;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class BookingConfirmedController extends Controller
 {
@@ -59,7 +60,10 @@ class BookingConfirmedController extends Controller
      */
     public function edit(BookingConfirmed $bookingConfirmed)
     {
-        //
+        return View('bookingConfirmed.edit', [
+            'record' => $bookingConfirmed,
+            'cars' => Car::all()
+        ]);
     }
 
     /**
@@ -67,7 +71,7 @@ class BookingConfirmedController extends Controller
      */
     public function update(Request $request, BookingConfirmed $bookingConfirmed)
     {
-        //
+        redirect('bookingConfirmed.index');
     }
 
     /**
@@ -75,6 +79,19 @@ class BookingConfirmedController extends Controller
      */
     public function destroy(BookingConfirmed $bookingConfirmed)
     {
-        //
+        try {
+        $bookingConfirmed->delete();
+        Session::flash('status', 'Booking deleted');
+        return response()->json(
+            ['status'=> 'success']
+        );
+            
+        } catch (\Exception $e) {
+        return response()->json(
+            ['status'=> 'error',
+            'message'=>'Serverside error occured']
+        )->setStatusCode(500);
+            
+        }
     }
 }
