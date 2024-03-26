@@ -56,6 +56,13 @@
     width: 70%;
     height: 25%;
 }
+#cars-add-row {
+    position: relative;
+    margin-bottom: 10rem;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
 .container#cars-table,
 .container#orders-table {
     position: absolute;

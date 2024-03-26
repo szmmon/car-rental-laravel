@@ -4,20 +4,24 @@
     <!-- zeby nie ladowalo css dla kazdej strony tylko dla tego danego endpointa -->
 
 @section('content')
+<div class="container-fluid">
+  <div class="row" id="img-row">
+    <div class="col-lg-12 p-0 mt-0 table-overlay">
+      <img class="image" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/19ac7271194397.5bbd04e32021f.jpg" alt="Full Width Image">
+
 
 <div class="container" id="cars-table">
     @include('helpers.flashmessages')
-    <div class="row">
+    <div class="row" id="cars-add-row">   
         <div class="col-10"><h2>Cars list</h2></div>
         <div class="col-2 float-right">
             <a href="{{route('cars.create')}}" class='float-right'>
-                <button class="btn btn-primary">+</button>
+                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
             </a>
-
         </div>
     </div>  
     <div class="row">
-        <table class="table table-hover">
+        <table class="table table-hover table-transparent">
             <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -25,7 +29,6 @@
                 <th scope="col">Description</th>
                 <th scope="col">Year</th>
                 <th scope="col">Price</th>
-                <!-- <th scope="col">Actions</th> -->
                 </tr>
             </thead>
             @foreach($cars as $car)
@@ -46,5 +49,8 @@
         </table>
     </div>
     </div>
+    </div>
+  </div>
+</div>
 
 @endsection
