@@ -43,7 +43,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                    <input id="pick_up_date" type="datetime-local" class="form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date" autofocus>
+                                    <input id="pick_up_date" type="datetime-local" class="datetimepicker form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date" autofocus>
                                     @error('pick-up-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

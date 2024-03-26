@@ -21,17 +21,18 @@
                         <form method="POST" action="{{ route('bookingConfirmed.update', $record->id) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
-                                <label for="car" class="col-sm-12 col-form-label text-sm-end">
+                                <label for="car_id" class="col-sm-12 col-form-label text-sm-end">
                                 <div class="d-flex justify-content-center">
                                             Car with daily price [USD]
                                     </div>
                                 </label>
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
-                                    <select class="form-select input-styling" aria-label="Default select example" name="car">
-                                        @foreach ($cars as $car)
-                                            <option id="daily_price" value="{{old($car->name)}}">{{$car->name}} - {{$car->daily_price}}</option>     
-                                        @endforeach
+                                    <select class="form-select input-styling" id="daily_price" aria-label="Default select example" name="car_id">
+                                        @foreach ($cars as $car)                                            
+                                            <option name="car_id" value="{{$car->id}}">{{$car->name}} - {{$car->daily_price}}
+                                            </option>     
+                                        @endforeach 
                                     </select>
                                 </div>
                             </div>
@@ -46,7 +47,8 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>    
-                                    <input id="location" type="text" class="form-control @error('location') is-invalid @enderror input-styling" name="location" value="{{$record->location}}">
+                                    <input id="location" type="text" class="form-control @error('location') is-invalid @enderror input-styling" name="location" 
+                                    value="{{$record->location}}">
                                     @error('location')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -64,7 +66,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                <input id="pick_up_date" type="datetime-local" class="form-control @error('pick_up_date') is-invalid @enderror input-styling" id="pick_up_date" name="pick_up_date" autofocus value="{{$record->pick_up_date}}">
+                                <input id="pick_up_date" type="datetime-local" class="datetimepicker form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date" autofocus value="{{$record->pick_up_date}}">
                                     @error('pick_up_date')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -82,7 +84,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                <input id="return_date" type="datetime-local" class="form-control @error('return_date') is-invalid @enderror input-styling" id="return_date" name="return_date" autofocus value="{{$record->return_date}}">
+                                <input id="return_date" type="datetime-local" class="datetimepicker form-control @error('return_date') is-invalid @enderror input-styling" name="return_date" autofocus value="{{$record->return_date}}">
                                     @error('return_date')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -91,13 +93,13 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
+                                <div class="d-flex justify-content-center">
+                                Total: 
+                                </div>
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
-                                <div class="d-flex justify-content-center">
-                                <strong>
-                                    Total: <div id="total_price">{{($record->total_price)}}</div>
-                                </strong>
-                                </div>
+                                    <input type="number" id="total_price" class="form-control input-styling total_price" disabled>
+                                    <input  hidden type="number" name="total_price" id="total_price" class="form-control input-styling total_price">
                                 </div>
                             </div>
                             
@@ -119,6 +121,16 @@
     </div>
 </div>
 
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    config = {
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+    }
+    flatpickr("input[type=datetime-local]", config);
+</script>
+@endpush
  
 
 @endsection

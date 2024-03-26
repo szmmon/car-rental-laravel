@@ -6,12 +6,12 @@ $(function () {
         return Math.floor((utc2 - utc1) / _MS_PER_DAY);
     }
 
-    // Funkcja do obliczenia ceny
     function calculateTotalPrice() {
-        var x = $("#daily_price").val().split(" - ");
+        var x = $("#daily_price option:selected").text().split(" - ");
         const dailyPrice = parseFloat(x[1]);
         const pickUpDate = new Date($("#pick_up_date").val());
         const returnDate = new Date($("#return_date").val());
+        // console.log(x);
 
         if (isNaN(dailyPrice)) {
             $("#total_price").val("");
@@ -19,13 +19,20 @@ $(function () {
         }
 
         const days = dateDiffInDays(pickUpDate, returnDate);
+        // console.log(days);
         const totalPrice = dailyPrice * days;
-        $("#total_price").val(totalPrice.toFixed(2));
+        if (totalPrice <= 0) {
+            console.log("here");
+            alert("Min 1 day required");
+            return;
+        }
+        $(".total_price").val(totalPrice.toFixed(2));
+        $(".total_price").text(totalPrice.toFixed(2));
     }
 
-    // Wywołaj funkcję przy zmianie dat lub ceny dziennie
     $("#pick_up_date, #return_date, #daily_price").on(
         "change",
         calculateTotalPrice
     );
+    calculateTotalPrice();
 });
