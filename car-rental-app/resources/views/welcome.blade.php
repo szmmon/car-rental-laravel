@@ -23,7 +23,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                    <input id="location" type="text" class="form-control @error('location') is-invalid @enderror input-styling" name="location" value=""  autocomplete="location" autofocus>
+                                    <input id="location" type="text" class="form-control @error('location') is-invalid @enderror input-styling" name="location" autocomplete="location" autofocus>
                                     @error('location')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                    <input id="pick_up_date" type="datetime-local" class="datetimepicker form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date" autofocus>
+                                    <input id="pick_up_date" type="datetime-local" class="datetimepicker form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date">
                                     @error('pick-up-date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                    <input id="return_date" type="datetime-local" class="datetimepicker form-control @error('return_date') is-invalid @enderror input-styling" name="return_date" value=""  autocomplete="return_date" autofocus>
+                                    <input id="return_date" type="datetime-local" class="datetimepicker form-control @error('return_date') is-invalid @enderror input-styling" name="return_date">
                                     @error('return_date')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -89,15 +89,5 @@
 <!-- Page Content -->
 
 
-@push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-    config = {
-        enableTime: true,
-        dateFormat: 'Y-m-d H:i',
-    }
-    flatpickr("input[type=datetime-local]", config);
-</script>
-@endpush
 
 @endsection

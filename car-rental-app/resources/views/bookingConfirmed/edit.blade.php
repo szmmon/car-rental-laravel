@@ -66,7 +66,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                <input id="pick_up_date" type="datetime-local" class="datetimepicker form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date" autofocus value="{{$record->pick_up_date}}">
+                                <input id="pick_up_date" type="datetime-local" class="datetimepicker form-control @error('pick_up_date') is-invalid @enderror input-styling" name="pick_up_date"  value="{{$record->pick_up_date}}">
                                     @error('pick_up_date')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
                                 <div class="col-sm-3"></div>
-                                <input id="return_date" type="datetime-local" class="datetimepicker form-control @error('return_date') is-invalid @enderror input-styling" name="return_date" autofocus value="{{$record->return_date}}">
+                                <input id="return_date" type="datetime-local" class="datetimepicker form-control @error('return_date') is-invalid @enderror input-styling" name="return_date" value="{{$record->return_date}}">
                                     @error('return_date')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -121,16 +121,5 @@
     </div>
 </div>
 
-@push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-    config = {
-        enableTime: true,
-        dateFormat: 'Y-m-d H:i',
-    }
-    flatpickr("input[type=datetime-local]", config);
-</script>
-@endpush
- 
 
 @endsection

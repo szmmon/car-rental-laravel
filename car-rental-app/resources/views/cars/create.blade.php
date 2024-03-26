@@ -12,7 +12,7 @@
         <div class="container car-container">
         <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card table-transparent">
                 <div class="card-header">Add a vehicle</div>
 
                 <div class="card-body">
