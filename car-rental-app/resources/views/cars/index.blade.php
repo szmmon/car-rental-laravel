@@ -31,7 +31,7 @@
                 <th scope="col">Price</th>
                 </tr>
             </thead>
-            @foreach($cars as $car)
+            @forelse($cars as $car)
             <tbody>
                 <tr>
                 <th scope="row">{{$car->id}}</th>
@@ -42,7 +42,10 @@
                 <td><a href="{{route('cars.show', $car->id)}}"><button class="btn btn-success sm"><i class="fa-solid fa-magnifying-glass"></i></button></a>
                 <a href="{{route('cars.edit', $car->id)}}"><button class="btn btn-info sm"><i class="fa-regular fa-pen-to-square"></i></button></a>
                 <button class="btn btn-danger sm record-delete" data-id="{{$car->id}}"><i class="fa-regular fa-trash-can"></i></button></td>
-                @endforeach
+                @empty
+                <th scope="row">No cars added</th>
+                @endforelse
+
                 </tr>
             </tbody>
     

@@ -11,7 +11,7 @@
       <img class="image" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/19ac7271194397.5bbd04e32021f.jpg" alt="Full Width Image">
         <table class="table picker table-transparent" id="picker-mobile">
             <form action="{{ route('bookRequest.store') }}" method="POST">
-                
+             @csrf   
                 <thead>
                     <tr>
                     <th colspan="3">
