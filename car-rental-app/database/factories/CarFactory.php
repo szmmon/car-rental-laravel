@@ -17,10 +17,13 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
+            'id' => random_int(10,100),
             'name' => fake()->name(),
             'description' =>fake()->name(20),
             'year' =>random_int(1900, 2010),
-            'daily-price' =>random_int(10,100),
+            'daily_price' =>random_int(10,100),
+            'updated_at' => '2024-04-02 15:33:52',
+            'created_at' => '2024-04-02 15:33:52'
         ];
     }
 }

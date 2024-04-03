@@ -69,6 +69,7 @@
                                     </form>
                                     @can('isAdmin')
                                     <a class="dropdown-item" href="/cars">Cars menu</a>
+                                    <a class="dropdown-item" href="/users">Users menu</a>
                                     @endcan
                                     <a class="dropdown-item" href="/bookingConfirmed">Bookings</a>
 

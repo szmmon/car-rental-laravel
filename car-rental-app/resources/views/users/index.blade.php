@@ -4,14 +4,18 @@
     <!-- zeby nie ladowalo css dla kazdej strony tylko dla tego danego endpointa -->
 
 @section('content')
+<div class="container-fluid">
+  <div class="row" id="img-row">
+    <div class="col-lg-12 p-0 mt-0 table-overlay">
+      <img class="image" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/19ac7271194397.5bbd04e32021f.jpg" alt="Full Width Image">
 
 <div class="container" id="cars-table">
     @include('helpers.flashmessages')
-    <div class="row">
+    <div class="row" id="cars-add-row">
         <div class="col-12"><h2>Users list</h2></div>
     </div>  
     <div class="row">
-        <table class="table table-hover">
+        <table class="table table-hover table-transparent">
             <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -45,5 +49,7 @@
             {{$users->links()}}
     </div>
     </div>
-
+    </div>
+  </div>
+</div>
 @endsection
