@@ -9,7 +9,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,10 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
 });
 
 Auth::routes();
