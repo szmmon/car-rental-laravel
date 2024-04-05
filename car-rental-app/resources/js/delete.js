@@ -11,9 +11,10 @@ $(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 if (window.location.href.includes("cars")) {
+                    console.log(window.location.href);
                     $.ajax({
                         method: "DELETE",
-                        url: "http://localhost:8000/cars/" + $(this).data("id"),
+                        url: window.location.href + "/" + $(this).data("id"),
                         // data: {$id = },
                     })
                         .done(function (data) {
@@ -25,8 +26,7 @@ $(function () {
                 } else if (window.location.href.includes("users")) {
                     $.ajax({
                         method: "DELETE",
-                        url:
-                            "http://localhost:8000/users/" + $(this).data("id"),
+                        url: window.location.href + "/" + $(this).data("id"),
                         // data: {$id = },
                     })
                         .done(function (data) {
@@ -38,9 +38,7 @@ $(function () {
                 } else if (window.location.href.includes("bookingConfirmed")) {
                     $.ajax({
                         method: "DELETE",
-                        url:
-                            "http://localhost:8000/bookingConfirmed/" +
-                            $(this).data("id"),
+                        url: window.location.href + "/" + $(this).data("id"),
                         // data: {$id = },
                     })
                         .done(function (data) {
