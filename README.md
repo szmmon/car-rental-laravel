@@ -18,8 +18,11 @@ Car rental web app, personal project made while learning the laravel framework, 
   
  ## Demo 
  Sample admin account: 
+ 
  `login = user1@user.com`
+ 
  `password = useruser123`
+ 
  https://car-rental-laravel-production.up.railway.app/
 
 ## Running Tests
