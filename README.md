@@ -15,7 +15,12 @@ Car rental web app, personal project made while learning the laravel framework, 
 ![App Screenshot](https://github.com/szmmon/car-rental-laravel/blob/main/car-rental-app/gifs/admin%20cars%20menu.gif)
 
 - Email verification done with mailtrap.io
-
+  
+ ## Demo 
+ Sample admin account: 
+ `login = user1@user.com`
+ `password = useruser123`
+ https://car-rental-laravel-production.up.railway.app/
 
 ## Running Tests
 
