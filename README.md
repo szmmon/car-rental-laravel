@@ -17,11 +17,11 @@ Car rental web app, personal project made while learning the laravel framework, 
 - Email verification done with mailtrap.io
   
  ## Demo 
- Sample admin account: 
+ Sample account: 
  
- `login = user1@user.com`
+ `login = user2@user.com`
  
- `password = useruser123`
+ `password = useruser`
  
  https://car-rental-laravel-production.up.railway.app/
 
