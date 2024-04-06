@@ -37,6 +37,7 @@ class CarController extends Controller
     {
         $car = new Car($request->validated());
         if ($request->hasFile(key:'image')){
+            
             $car->image_path = $request->file(key:'image')->store(path:'cars');
                 }        
         $car->save();

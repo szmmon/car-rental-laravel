@@ -78,7 +78,7 @@
     margin-top: 10vh;
 }
 .card-img-top {
-    height: 10%;
+    height: 40vh;
 }
 @media screen and (max-width: 500px) {
     #picker-mobile {
